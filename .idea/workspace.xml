@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4ca71d62-6ed9-4b5b-a8ca-22ff44ca158d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/snap/go/6274" />
+  <component name="ProjectId" id="1gv0mcBM0NY8oaOkwN0NK3qu0O3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/api/auth/service" />
+      <recent name="$PROJECT_DIR$/pkg" />
+      <recent name="$PROJECT_DIR$/pkg/api/auth" />
+      <recent name="$PROJECT_DIR$/cmd/app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="go build github.com/noartem/godi-example/cmd/api" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="godi-example" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/api/main.go" />
+      <package value="github.com/noartem/godi-example/cmd/api" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/noartem/godi-example/cmd/api" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="986" y="486" key="#GOROOT" timestamp="1599017757101">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="986" y="486" key="#GOROOT/0.27.1920.1053@0.27.1920.1053" timestamp="1599017757101" />
+    <state x="981" y="390" width="400" height="327" key="#Go_Modules" timestamp="1599018562289">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="981" y="390" width="400" height="327" key="#Go_Modules/0.27.1920.1053@0.27.1920.1053" timestamp="1599018562289" />
+    <state x="1189" y="455" width="484" height="494" key="#xdebugger.evaluate" timestamp="1599050618927">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="1189" y="455" width="484" height="494" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1599050618927" />
+    <state x="969" y="311" width="424" height="484" key="FileChooserDialogImpl" timestamp="1599023789068">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="969" y="311" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1599023789068" />
+    <state width="1422" height="278" key="GridCell.Tab.0.bottom" timestamp="1599136703150">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="278" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599136703150" />
+    <state width="1422" height="278" key="GridCell.Tab.0.center" timestamp="1599136703149">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="278" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599136703149" />
+    <state width="1422" height="278" key="GridCell.Tab.0.left" timestamp="1599136703148">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="278" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599136703148" />
+    <state width="1422" height="278" key="GridCell.Tab.0.right" timestamp="1599136703149">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="278" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599136703149" />
+    <state width="1422" height="343" key="GridCell.Tab.1.bottom" timestamp="1599113231632">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="343" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599113231632" />
+    <state width="1422" height="343" key="GridCell.Tab.1.center" timestamp="1599113231631">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="343" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599113231631" />
+    <state width="1422" height="343" key="GridCell.Tab.1.left" timestamp="1599113231631">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="343" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599113231631" />
+    <state width="1422" height="343" key="GridCell.Tab.1.right" timestamp="1599113231632">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1422" height="343" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599113231632" />
+    <state x="675" y="188" key="SettingsEditor" timestamp="1599018643676">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="675" y="188" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1599018643676" />
+    <state x="915" y="287" width="540" height="524" key="StructurePopup" timestamp="1599110825527">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="915" y="287" width="540" height="524" key="StructurePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1599110825527" />
+    <state x="876" y="286" width="620" height="534" key="find.popup" timestamp="1599113458994">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="876" y="286" width="620" height="534" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1599113458994" />
+    <state x="849" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1599116226399">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="849" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1599116226399" />
+    <state x="911" y="466" width="540" height="174" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1599022995924">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="911" y="466" width="540" height="174" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599022995924" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/go/pkg/mod/github.com/noartem/godi@v0.0.2/resolve.go</url>
+          <line>148</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/pkg/api/auth/service/service.go</url>
+          <line>71</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
