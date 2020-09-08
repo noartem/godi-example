@@ -1,0 +1,249 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "API Docs for godi-example v1",
+    "title": "Godi-example - example http server by github.com/noartem/godi",
+    "contact": {
+      "name": "Noskov Artem",
+      "url": "https://github.com/noartem",
+      "email": "nowasmawesome@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    "version": "2.0.0"
+  },
+  "host": "localhost:8080",
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Logs in user by username and Password.",
+        "operationId": "login",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/credentials"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/loginResp"
+          },
+          "400": {
+            "$ref": "#/responses/errMsg"
+          },
+          "401": {
+            "$ref": "#/responses/errMsg"
+          },
+          "403": {
+            "$ref": "#/responses/err"
+          },
+          "404": {
+            "$ref": "#/responses/errMsg"
+          },
+          "500": {
+            "$ref": "#/responses/err"
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Register new user.",
+        "operationId": "register",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/newUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/registerResp"
+          },
+          "400": {
+            "$ref": "#/responses/errMsg"
+          },
+          "401": {
+            "$ref": "#/responses/errMsg"
+          },
+          "403": {
+            "$ref": "#/responses/err"
+          },
+          "404": {
+            "$ref": "#/responses/errMsg"
+          },
+          "500": {
+            "$ref": "#/responses/err"
+          }
+        }
+      }
+    },
+    "/refresh/{token}": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Refreshes jwt token.",
+        "operationId": "refresh",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "refresh token",
+            "name": "token",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/refreshResp"
+          },
+          "400": {
+            "$ref": "#/responses/errMsg"
+          },
+          "401": {
+            "$ref": "#/responses/err"
+          },
+          "500": {
+            "$ref": "#/responses/err"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "credentials": {
+      "type": "object",
+      "properties": {
+        "Email": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        }
+      },
+      "x-go-package": "github.com/noartem/godi-example/pkg/api/auth/transport"
+    },
+    "newUser": {
+      "type": "object",
+      "properties": {
+        "Email": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        }
+      },
+      "x-go-package": "github.com/noartem/godi-example/pkg/api/auth/transport"
+    }
+  },
+  "responses": {
+    "err": {
+      "description": "Error response"
+    },
+    "errMsg": {
+      "description": "Error response with message",
+      "headers": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "loginResp": {
+      "description": "Login response",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "refresh_token": {
+            "type": "string",
+            "x-go-name": "RefreshToken"
+          },
+          "token": {
+            "type": "string",
+            "x-go-name": "Token"
+          }
+        }
+      }
+    },
+    "ok": {
+      "description": "Success response"
+    },
+    "refreshResp": {
+      "description": "Token refresh response",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "refresh_token": {
+            "type": "string",
+            "x-go-name": "RefreshToken"
+          },
+          "token": {
+            "type": "string",
+            "x-go-name": "Token"
+          }
+        }
+      }
+    },
+    "registerResp": {
+      "description": "Register response",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "x-go-name": "Email"
+          },
+          "id": {
+            "type": "integer",
+            "format": "uint64",
+            "x-go-name": "ID"
+          },
+          "name": {
+            "type": "string",
+            "x-go-name": "Name"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "bearer": [
+        "[]"
+      ]
+    }
+  ]
+}
