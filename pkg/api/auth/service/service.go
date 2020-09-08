@@ -38,12 +38,12 @@ func (service *Service) Authenticate(email string, password string) (*types.Auth
 		return nil, err
 	}
 
-	hashedPassword, err := util.Hash(password)
+	passwordIsCorrect, err := util.CompareHash(password, user.Password)
 	if err != nil {
-		return nil, fmt.Errorf("hash passsword: %v", err)
+		return nil, err
 	}
 
-	if user.Password != hashedPassword {
+	if passwordIsCorrect {
 		return nil, fmt.Errorf("invalid password")
 	}
 
@@ -75,7 +75,7 @@ func (service *Service) Refresh(tokenString string) (*types.AuthToken, error) {
 }
 
 func (service *Service) Create(email string, password string, name string) (*types.User, error) {
-	hashedPassword, err := util.Hash(password)
+	hashedPassword, err := util.HashPassword(password)
 	if err != nil {
 		return nil, fmt.Errorf("hash passsword: %v", err)
 	}

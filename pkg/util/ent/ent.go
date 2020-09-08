@@ -12,7 +12,7 @@ import (
 )
 
 type ClientWithCtx struct {
-	DB *ent.Client
+	DB  *ent.Client
 	Ctx context.Context
 }
 
@@ -28,7 +28,7 @@ func NewEnt(config *config.Config) (*ClientWithCtx, *godi.BeanOptions, error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	defer client.Close()
+	//defer client.Close()
 
 	ctx := context.Background()
 

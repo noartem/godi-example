@@ -16,6 +16,8 @@ const Path IPath = "./cmd/api/config.yml"
 type Config struct {
 	Port uint `json:"port" yaml:"port"`
 
+	SwaggerPath string `json:"swagger_path" yaml:"swagger_path"`
+
 	DB struct {
 		Host     string `json:"host" yaml:"host"`
 		Port     uint   `json:"port" yaml:"port"`

@@ -1,8 +1,16 @@
 port: 8080
 
+swagger_path: "assets/swagger"
+
 db:
   host: "localhost"
   port: 5432
-  user: "postgres"
-  dbname: "godi"
+  user: "godi"
+  name: "godi"
   password: "12345"
+
+jwt:
+  algo: "HS256"
+  secret: "some_secret"
+  ttl: 10080 # 7 * 24 * 60
+  refresh_ttl: 20160 # 14 * 24 * 60

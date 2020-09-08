@@ -9,7 +9,6 @@ type IApi interface {
 
 // IController api controller
 type IController interface {
-	Name() string
-	Register(group *echo.Group) error
+	Register(e *echo.Echo) error
 	Middlewares() []echo.MiddlewareFunc
 }
