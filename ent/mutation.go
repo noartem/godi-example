@@ -31,7 +31,7 @@ type UserMutation struct {
 	config
 	op            Op
 	typ           string
-	id            *int
+	id            *uint
 	created_at    *time.Time
 	name          *string
 	email         *string
@@ -61,7 +61,7 @@ func newUserMutation(c config, op Op, opts ...userOption) *UserMutation {
 }
 
 // withUserID sets the id field of the mutation.
-func withUserID(id int) userOption {
+func withUserID(id uint) userOption {
 	return func(m *UserMutation) {
 		var (
 			err   error
@@ -113,13 +113,13 @@ func (m UserMutation) Tx() (*Tx, error) {
 
 // SetID sets the value of the id field. Note that, this
 // operation is accepted only on User creation.
-func (m *UserMutation) SetID(id int) {
+func (m *UserMutation) SetID(id uint) {
 	m.id = &id
 }
 
 // ID returns the id value in the mutation. Note that, the id
 // is available only if it was provided to the builder.
-func (m *UserMutation) ID() (id int, exists bool) {
+func (m *UserMutation) ID() (id uint, exists bool) {
 	if m.id == nil {
 		return
 	}

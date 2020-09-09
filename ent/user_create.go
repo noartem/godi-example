@@ -69,8 +69,8 @@ func (uc *UserCreate) SetNillablePassword(s *string) *UserCreate {
 }
 
 // SetID sets the id field.
-func (uc *UserCreate) SetID(i int) *UserCreate {
-	uc.mutation.SetID(i)
+func (uc *UserCreate) SetID(u uint) *UserCreate {
+	uc.mutation.SetID(u)
 	return uc
 }
 
@@ -149,7 +149,7 @@ func (uc *UserCreate) sqlSave(ctx context.Context) (*User, error) {
 	}
 	if u.ID == 0 {
 		id := _spec.ID.Value.(int64)
-		u.ID = int(id)
+		u.ID = uint(id)
 	}
 	return u, nil
 }
@@ -160,7 +160,7 @@ func (uc *UserCreate) createSpec() (*User, *sqlgraph.CreateSpec) {
 		_spec = &sqlgraph.CreateSpec{
 			Table: user.Table,
 			ID: &sqlgraph.FieldSpec{
-				Type:   field.TypeInt,
+				Type:   field.TypeUint,
 				Column: user.FieldID,
 			},
 		}
@@ -245,7 +245,7 @@ func (ucb *UserCreateBulk) Save(ctx context.Context) ([]*User, error) {
 				}
 				if nodes[i].ID == 0 {
 					id := specs[i].ID.Value.(int64)
-					nodes[i].ID = int(id)
+					nodes[i].ID = uint(id)
 				}
 				return nodes[i], nil
 			})

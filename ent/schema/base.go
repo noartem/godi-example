@@ -8,7 +8,7 @@ import (
 
 func withBase(fields []ent.Field) []ent.Field {
 	return append([]ent.Field{
-		field.Int("id").
+		field.Uint("id").
 			StructTag(`json:"oid,omitempty"`),
 		field.Time("created_at").
 			Default(time.Now),

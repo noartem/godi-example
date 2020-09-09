@@ -14,6 +14,8 @@ func Register(c *godi.Container) error {
 
 		jwt.NewJWT,
 
+		NewHash,
+
 		ent.NewEnt,
 	)
 }

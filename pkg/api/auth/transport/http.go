@@ -44,24 +44,15 @@ func (controller *authController) Register(e *echo.Echo) error {
 	//  500: err
 	e.POST("/auth/register", controller.register)
 
-	// swagger:operation POST /refresh/{token} auth refresh
-	// ---
-	// summary: Refreshes jwt token.
-	// parameters:
-	// - Name: token
-	//   in: path
-	//   description: refresh token
-	//   type: string
-	//   required: true
+	// swagger:route POST /refresh auth refresh
+	// Refresh auth token.
 	// responses:
-	//   "200":
-	//     "$ref": "#/responses/refreshResp"
-	//   "400":
-	//     "$ref": "#/responses/errMsg"
-	//   "401":
-	//     "$ref": "#/responses/err"
-	//   "500":
-	//     "$ref": "#/responses/err"
+	//  200: refreshResp
+	//  400: errMsg
+	//  401: errMsg
+	// 	403: err
+	//  404: errMsg
+	//  500: err
 	e.POST("/refresh", controller.refresh)
 
 	return nil
@@ -114,8 +105,21 @@ func (controller *authController) register(ctx echo.Context) error {
 	return ctx.JSON(http.StatusOK, user)
 }
 
+type refreshReq struct {
+	Token string `json:"token" validate:"required"`
+}
+
 func (controller *authController) refresh(ctx echo.Context) error {
-	token, err := controller.service.Refresh(ctx.Param("token"))
+	req := new(refreshReq)
+	if err := ctx.Bind(req); err != nil {
+		return err
+	}
+
+	if err := ctx.Validate(req); err != nil {
+		return err
+	}
+
+	token, err := controller.service.Refresh(req.Token)
 	if err != nil {
 		return err
 	}

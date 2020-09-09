@@ -6,7 +6,7 @@ import (
 	"github.com/noartem/godi-example/pkg/util"
 	"github.com/noartem/godi-example/pkg/util/config"
 	"github.com/noartem/godi-example/pkg/util/jwt"
-	"log"
+	"time"
 )
 
 type IService interface {
@@ -24,10 +24,11 @@ type Service struct {
 	udb    IUserDB
 	config *config.Config
 	jwt    jwt.JWT
+	hasher *util.Hasher
 }
 
-func NewService(udb IUserDB, jwt jwt.JWT) IService {
-	service := &Service{udb: udb, jwt: jwt}
+func NewService(udb IUserDB, jwt jwt.JWT, config *config.Config, hasher *util.Hasher) IService {
+	service := &Service{udb: udb, jwt: jwt, config: config, hasher: hasher}
 
 	return service
 }
@@ -38,12 +39,12 @@ func (service *Service) Authenticate(email string, password string) (*types.Auth
 		return nil, err
 	}
 
-	passwordIsCorrect, err := util.CompareHash(password, user.Password)
+	passwordIsCorrect, err := service.hasher.Compare(password, user.Password)
 	if err != nil {
 		return nil, err
 	}
 
-	if passwordIsCorrect {
+	if !passwordIsCorrect {
 		return nil, fmt.Errorf("invalid password")
 	}
 
@@ -63,19 +64,70 @@ func (service *Service) Authenticate(email string, password string) (*types.Auth
 	}, nil
 }
 
-func (service *Service) Refresh(tokenString string) (*types.AuthToken, error) {
-	token, err := service.jwt.ParseToken(tokenString)
+func (service *Service) parseToken(token string) (string, time.Time, error) {
+	claims, err := service.jwt.ParseToken(token)
 	if err != nil {
-		return nil, fmt.Errorf("parse token: %v", err)
+		return "", time.Time{}, fmt.Errorf("parse token: %v", err)
 	}
 
-	log.Println(token.Header)
+	emailI := claims["e"]
+	if emailI == nil {
+		return "", time.Time{}, fmt.Errorf("invalid claims email")
+	}
 
-	return &types.AuthToken{}, nil
+	email, ok := emailI.(string)
+	if !ok {
+		return "", time.Time{}, fmt.Errorf("invalid claims email")
+	}
+
+	expI := claims["exp"]
+	if expI == nil {
+		return "", time.Time{}, fmt.Errorf("invalid claims expiration")
+	}
+
+	exp, ok := expI.(float64)
+	if !ok {
+		return "", time.Time{}, fmt.Errorf("invalid claims expiration")
+	}
+
+	expTime := time.Unix(int64(exp), 0)
+
+	return email, expTime, nil
+}
+
+func (service *Service) Refresh(token string) (*types.AuthToken, error) {
+	email, exp, err := service.parseToken(token)
+	if err != nil {
+		return nil, err
+	}
+
+	if exp.Add(time.Minute * time.Duration(service.config.JWT.RefreshTTL)).Before(time.Now()) {
+		return nil, fmt.Errorf("token is expired")
+	}
+
+	user, err := service.udb.FindByEmail(email)
+	if err != nil {
+		return nil, err
+	}
+
+	authToken, err := service.jwt.GenerateToken(user)
+	if err != nil {
+		return nil, fmt.Errorf("generate token: %v", err)
+	}
+
+	refreshToken, err := service.jwt.GenerateRefreshToken(user.ID)
+	if err != nil {
+		return nil, fmt.Errorf("generate refresh token: %v", err)
+	}
+
+	return &types.AuthToken{
+		Token:        authToken,
+		RefreshToken: refreshToken,
+	}, nil
 }
 
 func (service *Service) Create(email string, password string, name string) (*types.User, error) {
-	hashedPassword, err := util.HashPassword(password)
+	hashedPassword, err := service.hasher.Hash(password)
 	if err != nil {
 		return nil, fmt.Errorf("hash passsword: %v", err)
 	}

@@ -36,6 +36,13 @@ type swaggRegisterResp struct {
 	}
 }
 
+// Refresh request
+// swagger:parameters refresh
+type swaggRefreshReq struct {
+	// in:body
+	Body refreshReq
+}
+
 // Token refresh response
 // swagger:response refreshResp
 type swaggRefreshResp struct {

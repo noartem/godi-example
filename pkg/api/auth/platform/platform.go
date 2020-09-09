@@ -12,7 +12,7 @@ type userDB struct {
 }
 
 func NewUserDB(ent *ent.ClientWithCtx) service.IUserDB {
-	return &userDB{ ent: ent }
+	return &userDB{ent: ent}
 }
 
 func (udb *userDB) CreateUser(user types.User) (*types.User, error) {
@@ -27,8 +27,9 @@ func (udb *userDB) CreateUser(user types.User) (*types.User, error) {
 	}
 
 	return &types.User{
-		Name:  u.Name,
-		Email: u.Email,
+		ID:       u.ID,
+		Name:     u.Name,
+		Email:    u.Email,
 		Password: u.Password,
 	}, nil
 }
@@ -45,8 +46,8 @@ func (udb *userDB) FindByEmail(email string) (*types.User, error) {
 	}
 
 	return &types.User{
-		Name:  u.Name,
-		Email: u.Email,
+		Name:     u.Name,
+		Email:    u.Email,
 		Password: u.Password,
 	}, nil
 }

@@ -1,4 +1,3 @@
-
 package jwt
 
 import (
@@ -11,7 +10,7 @@ import (
 )
 
 type JWT interface {
-	ParseToken(authHeader string) (*jwt.Token, error)
+	ParseToken(authHeader string) (jwt.MapClaims, error)
 	GenerateToken(user *types.User) (string, error)
 	GenerateRefreshToken(userId uint) (string, error)
 }
@@ -24,9 +23,9 @@ func NewJWT(config *config.Config) (JWT, error) {
 	}
 
 	return &Service{
-		key:  []byte(config.JWT.Secret),
-		algo: signingMethod,
-		ttl:  time.Duration(config.JWT.TTL) * time.Minute,
+		key:        []byte(config.JWT.Secret),
+		algo:       signingMethod,
+		ttl:        time.Duration(config.JWT.TTL) * time.Minute,
 		refreshTtl: time.Duration(config.JWT.RefreshTTL) * time.Minute,
 	}, nil
 }
@@ -46,8 +45,9 @@ type Service struct {
 }
 
 // ParseToken parses token from Authorization header
-func (s *Service) ParseToken(tokenString string) (*jwt.Token, error) {
-	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+func (s *Service) ParseToken(tokenString string) (jwt.MapClaims, error) {
+	claims := make(jwt.MapClaims)
+	_, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
 		if s.algo != token.Method {
 			return nil, fmt.Errorf("invalid token")
 		}
@@ -57,7 +57,7 @@ func (s *Service) ParseToken(tokenString string) (*jwt.Token, error) {
 		return nil, err
 	}
 
-	return token, nil
+	return claims, nil
 }
 
 // GenerateToken generates new JWT token and populates it with user data
