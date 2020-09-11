@@ -12,7 +12,8 @@ require (
 	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/lib/pq v1.8.0
-	github.com/noartem/godi v0.0.3
-	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
+	github.com/noartem/godi v0.1.0
+	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a // indirect
+	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/yaml.v2 v2.3.0
 )

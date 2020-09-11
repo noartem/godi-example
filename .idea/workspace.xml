@@ -11,28 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ca71d62-6ed9-4b5b-a8ca-22ff44ca158d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/42236cec-aadf-4495-a7e1-0074df1f6832.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/42236cec-aadf-4495-a7e1-0074df1f6832.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/42236cec-aadf-4495-a7e1-0074df1f6832/storage_v2/_src_/database/godi.bX8wAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/42236cec-aadf-4495-a7e1-0074df1f6832/storage_v2/_src_/database/godi.bX8wAA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/swagger/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/swagger/swagger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/mutation.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/mutation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/schema/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/schema/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/user/where.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/user/where.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/user_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/user_create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/user_delete.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/user_delete.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/user_query.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/user_query.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/user_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/user_update.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/api/auth/platform/platform.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/api/auth/platform/platform.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/api/auth/service/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/api/auth/service/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/api/auth/transport/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/api/auth/transport/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/api/auth/transport/swagger.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/api/auth/transport/swagger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/util/hash.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/util/hash.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/util/jwt/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/util/jwt/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/util/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/util/register.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +96,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add swagger&#10;Add validator" />
     <MESSAGE value="Add swagger ui and redoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add swagger ui and redoc" />
+    <MESSAGE value="Fix register, login, refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix register, login, refresh" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -132,14 +115,18 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="903" y="183" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599665808536" />
+    <state x="891" y="354" width="579" height="399" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599818572803">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="891" y="354" width="579" height="399" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1599818572803" />
     <state x="1058" y="352" width="479" height="339" key="#com.intellij.tools.ToolEditorDialog" timestamp="1599665728129">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="1058" y="352" width="479" height="339" key="#com.intellij.tools.ToolEditorDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599665728129" />
-    <state x="1189" y="455" width="484" height="494" key="#xdebugger.evaluate" timestamp="1599666558643">
+    <state x="1190" y="454" width="484" height="494" key="#xdebugger.evaluate" timestamp="1599668907794">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="1189" y="455" width="484" height="494" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1599666558643" />
+    <state x="1190" y="454" width="484" height="494" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1599668907794" />
     <state width="679" height="526" key="DebuggerActiveHint" timestamp="1599668058119">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -148,38 +135,38 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="969" y="311" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1599023789068" />
-    <state width="1422" height="307" key="GridCell.Tab.0.bottom" timestamp="1599668790588">
+    <state width="1422" height="278" key="GridCell.Tab.0.bottom" timestamp="1599669001746">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790588" />
-    <state width="1422" height="307" key="GridCell.Tab.0.center" timestamp="1599668790588">
+    <state width="1422" height="278" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001746" />
+    <state width="1422" height="278" key="GridCell.Tab.0.center" timestamp="1599669001745">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790588" />
-    <state width="1422" height="307" key="GridCell.Tab.0.left" timestamp="1599668790588">
+    <state width="1422" height="278" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001745" />
+    <state width="1422" height="278" key="GridCell.Tab.0.left" timestamp="1599669001744">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790588" />
-    <state width="1422" height="307" key="GridCell.Tab.0.right" timestamp="1599668790588">
+    <state width="1422" height="278" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001744" />
+    <state width="1422" height="278" key="GridCell.Tab.0.right" timestamp="1599669001746">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790588" />
-    <state width="1422" height="307" key="GridCell.Tab.1.bottom" timestamp="1599668790589">
+    <state width="1422" height="278" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001746" />
+    <state width="1422" height="307" key="GridCell.Tab.1.bottom" timestamp="1599669001739">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790589" />
-    <state width="1422" height="307" key="GridCell.Tab.1.center" timestamp="1599668790589">
+    <state width="1422" height="307" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001739" />
+    <state width="1422" height="307" key="GridCell.Tab.1.center" timestamp="1599669001739">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790589" />
-    <state width="1422" height="307" key="GridCell.Tab.1.left" timestamp="1599668790589">
+    <state width="1422" height="307" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001739" />
+    <state width="1422" height="307" key="GridCell.Tab.1.left" timestamp="1599669001739">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790589" />
-    <state width="1422" height="307" key="GridCell.Tab.1.right" timestamp="1599668790589">
+    <state width="1422" height="307" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001739" />
+    <state width="1422" height="307" key="GridCell.Tab.1.right" timestamp="1599669001739">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1422" height="307" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599668790589" />
+    <state width="1422" height="307" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599669001739" />
     <state width="257" height="534" key="HiddenNamespacesPopup" timestamp="1599665325176">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -222,15 +209,6 @@
     <state x="911" y="466" width="540" height="174" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599022995924" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/pkg/api/auth/service/service.go</url>
-          <line>109</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="GoApplicationRunConfiguration">
         <watch expression="*(*&quot;string&quot;)(824634347424)" />
